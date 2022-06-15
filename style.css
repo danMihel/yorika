@@ -1,7 +1,6 @@
 body {
     font-family: 'Inter', sans-serif;
 }
-
 .bg-darck-blue{
     background-color: #0F1A36;
 }
@@ -21,13 +20,10 @@ body {
     background-image: url(img/bg-hero.png);
     background-size: cover;
 }
-
 .button{
     background-color:#C55AA2;
     border: solid 1px #2F5597;
     color: #FFFAFA;
     padding: 13px 120px;
     border-radius: 20px;
-    
-
 }
