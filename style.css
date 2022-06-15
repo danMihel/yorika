@@ -8,3 +8,7 @@
 .text-color-darck{
     color: #ABA7A7;
 }
+.hero-container{
+    background-image: url(img/bg-hero.png);
+    background-size: cover;
+}
