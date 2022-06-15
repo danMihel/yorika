@@ -1,14 +1,33 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
 .bg-darck-blue{
     background-color: #0F1A36;
 }
 .bord{
     border: solid tomato;
 }
-
-.text-color-darck{
+.text-color-nav{
     color: #ABA7A7;
+}
+.text-color-darck{
+    color: #444444;
+}
+.text-color-blue{
+    color: #2F5597;
 }
 .hero-container{
     background-image: url(img/bg-hero.png);
     background-size: cover;
+}
+
+.button{
+    background-color:#C55AA2;
+    border: solid 1px #2F5597;
+    color: #FFFAFA;
+    padding: 13px 120px;
+    border-radius: 20px;
+    
+
 }
