@@ -1,5 +1,6 @@
 body {
     font-family: 'Inter', sans-serif;
+    
 }
 .bg-darck-blue{
     background-color: #0F1A36;
@@ -16,6 +17,9 @@ body {
 .text-color-blue{
     color: #2F5597;
 }
+.text-color-pink{
+    color: #C55AA2;
+}
 .hero-container{
     background-image: url(img/bg-hero.png);
     background-size: cover;
@@ -30,4 +34,15 @@ body {
 }
 .scene{
     height: 1000px;
+}
+.bg-separator{
+    background-image: url(img/separator.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100%;
+}
+.bg-center{
+    background-image: url(img/bg-center.png);
+    background-size:cover;
 }
