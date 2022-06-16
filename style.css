@@ -46,3 +46,50 @@ body {
     background-image: url(img/bg-center.png);
     background-size:cover;
 }
+.center-subtitle{
+    margin-left: 17%;
+}
+#center-pic-top{
+    position: relative;
+}
+
+#center-pic-top::after{
+    position: absolute;
+    top: 200px;
+    left: 5.1%;
+    content: "   ";
+    width: 12.5vw;
+    height: 345px;
+    border-top: dotted 6px #C55AA2;
+    border-left:dotted 6px #C55AA2;
+    border-bottom:dotted 6px #C55AA2;
+}
+#center-pic-top::before{
+    position: absolute;
+    margin-left: 13%;
+    top: 540px;
+    left: 5%;
+    content: "   ";
+    width: 50vw;
+    height: 570px;
+    border-top:dotted 6px #C55AA2;
+    border-right:dotted 6px #C55AA2;
+    border-bottom:dotted 6px #C55AA2;
+}
+
+#center-pic-bottom{
+    position: relative;
+    
+}
+#center-pic-bottom::before{
+    position: absolute;
+    margin-left: 3%;
+    top: 1105px;
+    left: 8.2%;
+    content: "   ";
+    width: 6.5vw;
+    height: 370px;
+    border-top:dotted 6px #C55AA2;
+    border-left:dotted 6px #C55AA2;
+    border-bottom:dotted 6px #C55AA2;
+}
