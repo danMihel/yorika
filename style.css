@@ -2,6 +2,16 @@ body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
+#scenWraper{
+    padding-top: 30px;
+}
+.animTitle{
+    font-size: 3rem;
+}
+.animQestion{
+    margin-left: 10%;
+    font-family: 'Inter', sans-serif;
+}
 .bg-darck-blue{
     background-color: #0F1A36;
 }
@@ -41,7 +51,7 @@ body {
     width: 330px;
 }
 .scene{
-    height: 1000px;
+    height: 900px;
 }
 .bg-separator{
     background-image: url(img/separator.png);
