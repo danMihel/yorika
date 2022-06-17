@@ -39,13 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(function(){
                         heroAnimation("strFore",str5, 100);
                         setTimeout(function(){
-                            heroAnimation("strFive",str6, 100);  
+                            heroAnimation("strFive",str6, 50);  
                             setTimeout(function(){
                                 document.getElementById("strOne").innerHTML = "";
                                 document.getElementById("strTwo").innerHTML = "";
                                 document.getElementById("strThree").innerHTML = "";
                                 document.getElementById("strFore").innerHTML = "";
-                            },15000);                                            
+                                document.getElementById("strFive").innerHTML = "";
+                            },30000);                                            
                         },4000);               
                     },4000);
                 },4000);
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     playAnimation();
     setTimeout(function(){
         playAnimation();
-    },15000);                
+    },60000);                
 
 });
 /* ; */
