@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="/index.js"></script>
+    <script defer src="/index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -60,7 +60,12 @@
         </section>
         <section>
             <div class="container-fluid bg-darck-blue">
-                <div class="scene">
+                <div id="scenWraper" class="scene container fs-1 text-color-nav p-5">
+                    <p id="strOne" class=" "></p>
+                    <p id="strTwo" class=" "></p>
+                    <p id="strThree" class=" "></p>
+                    <p id="strFore" class=" "></p>
+                    <pre id="strFive"  class=" fs-4 bord "></pre>
                 </div>
             </div>
         </section>
