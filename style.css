@@ -20,6 +20,14 @@ body {
 .text-color-pink{
     color: #C55AA2;
 }
+.menu-item{
+    text-decoration:none;
+    color: #ABA7A7;
+}
+.menu-item:hover{
+    color: whitesmoke;
+
+}
 .hero-container{
     background-image: url(img/bg-hero.png);
     background-size: cover;
@@ -122,6 +130,6 @@ body {
     background-image: url(img/separator_bottom.png);
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 100px;
+    height: 50px;
     width: 100%;
 }
