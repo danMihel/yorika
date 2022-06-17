@@ -59,4 +59,3 @@ document.addEventListener('DOMContentLoaded', () => {
     },60000);                
 
 });
-/* ; */
