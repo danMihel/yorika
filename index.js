@@ -56,6 +56,5 @@ document.addEventListener('DOMContentLoaded', () => {
     playAnimation();
     setTimeout(function(){
         playAnimation();
-    },60000);                
-
+    },60000);
 });
