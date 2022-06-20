@@ -1,64 +1,83 @@
 document.addEventListener('DOMContentLoaded', function()   {
-    console.log('start');
-    fildOne = document.getElementById('strOne');
-    str1 = ["Visualize "];
-    str2 = ["your data"];
-    str3 = ["Rationalize "];
-    str4 = ["your portfolio of assets",];
-    str5 = ['You know what your business does.\n',
-            'You have a list of technologies used.\n',
-            'You need to answer questions like:\n'
-            ];
-    str6 = ['How to reduce technology debt?\n',
-            'Where is the record of truth for Customer profile?\n',
-            'How to mitigate risk of license/version expiration?\n',
-            'Which applications store sensitive data?\n',
-            'What dependencies need to be considered during migration?\n',
-            'Which applications are used for the same purpose during a merger?\n',
-            'Who owns this data?\n',
-            'Which interfaces move Customer data?\n',
-            'Which data elements contribute to your KPI?\n']; 
 
-    function heroAnimation(id, text, speed){
-        let ele = document.getElementById(id);
-        let txt = text.join("").split("");
-        let interval = setInterval(function(){
-            if(!txt[0]){
-            return clearInterval(interval);
-            }
-            ele.innerHTML+= txt.shift();
-        }, speed != undefined ? speed : 200);
-        return false;
-    }
-    function playAnimation(){
-        heroAnimation("strOne",str1, 100);
-        setTimeout(function(){
-            heroAnimation("strTwo",str2, 100);
-            setTimeout(function(){
-                document.getElementById("strOne").innerHTML = "";
-                heroAnimation("strOne",str3, 150);
-                setTimeout(function(){
-                    document.getElementById("strTwo").innerHTML = "";
-                    heroAnimation("strOne",str4, 150);
-                    setTimeout(function(){                        
-                        heroAnimation("strThree",str5, 100);
-                        setTimeout(function(){                        
-                            heroAnimation("strFore",str6, 100);
-                        },12000);
-                    },4000);
-                },3000);
-            },2000);
-        },1000);
+    str1 = "Visualize ";
+    str2 = "your data";
+    srt0 = " ";
+    str3 = "Rationalize ";
+    str4 = "your portfolio of assets";
+    str5 = 'You know what your business does.';
+    str6 = 'You have a list of technologies used.';
+    str7 = 'You need to answer questions like:';
+    str8 = 'How to reduce technology debt?';
+    str9 = 'Where is the record of truth for Customer profile?';
+    str10 = 'How to mitigate risk of license/version expiration?';
+    str11 = 'Which applications store sensitive data?';
+    str12 = 'What dependencies need to be considered during migration?';
+    str13 = 'Which applications are used for the same purpose during a merger?';
+    str14 = 'Who owns this data?';
+    str15 = 'Which interfaces move Customer data?';
+    str16 = 'Which data elements contribute to your KPI?'; 
+
+Promise.delay = (ms) => new Promise(resolve => { setTimeout(resolve, ms); });
+
+async function printer(cssSelector, text, r2l) {
+    let el = document.querySelector(cssSelector);
+    if (r2l)
+        for (let i = text.length - 1; i >= 0; i--) {
+            let c = text[i];
+            await Promise.delay(100);
+            el.textContent = c + el.textContent;
         }
-    playAnimation();
-    setInterval(function(){
-        document.getElementById("strOne").innerHTML = "";
-        document.getElementById("strThree").innerHTML = "";
-        document.getElementById("strFore").innerHTML = "";
-        playAnimation();
-    },90000); 
+    else
+        for (let c of text) {
+            await Promise.delay(100);
+            el.textContent = el.textContent + c;
+        }
+}
 
-    
+async function remove (cssSelector, delay, after) {
+    await Promise.delay( delay);
+    document.querySelector(cssSelector).innerHTML= ' ';
+    await Promise.delay(after);
+}
+let triger = true;
+setInterval(() => {
+    if(triger == true) {
+        (async function main() {
+            triger = false;
+            await printer("#strA", str1);
+            await printer("#strB", str2);
+            await remove ("#strA", 3000, 100);
+            await printer("#strA", str3);
+            await remove ("#strB", 2000,100);
+            await printer("#strA", str4);
+            await printer("#strC", str5);
+            await printer("#strD", str6);
+            await printer("#strE", str7);
+            await printer("#strF", str8);
+            await printer("#strG", str9);
+            await printer("#strH", str10);
+            await printer("#strI", str11); 
+            await printer("#strJ", str12); 
+            await printer("#strK", str13);
+            await printer("#strL", str14);
+            await printer("#strM", str15);
+            await printer("#strN", str16); 
+            await remove("#strA", 5000, 1);
+            await remove("#strB", 1,1);
+            await remove("#strC", 1,1);
+            await remove("#strD", 1,1);
+            await remove("#strE", 1,1);
+            await remove("#strF", 1,1);
+            await remove("#strG", 1,1);
+            await remove("#strH", 1,1);
+            await remove("#strI", 1,1);
+            await remove("#strJ", 1,1);
+            triger = true;
+        })();
+    } 
+},1000);
+
 });
 
 
