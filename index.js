@@ -73,6 +73,10 @@ setInterval(() => {
             await remove("#strH", 1,1);
             await remove("#strI", 1,1);
             await remove("#strJ", 1,1);
+            await remove("#strK", 1,1);
+            await remove("#strL", 1,1);
+            await remove("#strM", 1,1);
+            await remove("#strN", 1,1);
             triger = true;
         })();
     } 
