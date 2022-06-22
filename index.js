@@ -83,7 +83,59 @@ document.addEventListener('DOMContentLoaded', function()   {
     },1000);
     }
 
+    function slider(){          
+        let slideIndex = 1;
+        let textIndex = 1;
+        showSlides(slideIndex);
+        activeText (textIndex);
+        function nextSlide() {
+            showSlides(slideIndex += 1);
+            console.log(slideIndex);
+        }
+        function nextText() {
+            activeText(textIndex += 1);
+            console.log(slideIndex);
+        }
+        setInterval(() => {
+            nextText();
+            nextSlide();           
+        },3000);
+
+        function activeText (n){
+            let points = document.getElementsByClassName("slider-text");
+            if (n > points.length) {
+                textIndex = 1;
+                }
+                if (n < 1) {
+                    textIndex = points.length;
+                }
+                for (let point of points) {
+                    point.classList.add("active");
+                    }
+                    points[textIndex - 1].classList.remove("active");  
+        }
+        function showSlides(n) {
+        /* Обращаемся к элементам с названием класса "item", то есть к картинкам: */
+            let slides = document.getElementsByClassName("item"); 
+        /* Проверяем количество слайдов: */
+            if (n > slides.length) {
+            slideIndex = 1;
+            }
+            if (n < 1) {
+            slideIndex = slides.length;
+            }
+            /* Проходим по каждому слайду в цикле for: */
+            for (let slide of slides) {
+            slide.style.display = "none";
+            }
+            /* Делаем элемент блочным: */
+            slides[slideIndex - 1].style.display = "block";           
+            }
+        };
+
+    printText();
     slider();
+
 });
 
 
