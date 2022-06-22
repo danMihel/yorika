@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function()   {
             nextText();
             nextSlide();           
         },3000);
-
         function activeText (n){
             let points = document.getElementsByClassName("slider-text");
             if (n > points.length) {
@@ -110,9 +109,9 @@ document.addEventListener('DOMContentLoaded', function()   {
                     textIndex = points.length;
                 }
                 for (let point of points) {
-                    point.classList.add("active");
+                    point.classList.remove("active");
                     }
-                    points[textIndex - 1].classList.remove("active");  
+                    points[textIndex - 1].classList.add("active");  
         }
         function showSlides(n) {
         /* Обращаемся к элементам с названием класса "item", то есть к картинкам: */
