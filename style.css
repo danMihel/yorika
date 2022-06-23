@@ -7,10 +7,32 @@ body {
 }
 .animTitle {
     font-size: 3rem;
+    font-weight: 600;
+}
+.hidden {
+    height:30px;
+    animation-name: fade-out;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards; 
+    
+}
+
+@keyframes fade-out {
+    /* Устанавливаем и изменяем степень прозрачности: */
+    from {
+        height:70px;
+        opacity: 1;
+    }to {
+        height: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+    }
+
 }
 .animQestion {
-    margin-left: 10%;
-    font-family: 'Inter', sans-serif;
+    margin-left: 15%;
+    
 }
 .bg-darck-blue {
     background-color: #0F1A36;
@@ -51,7 +73,7 @@ body {
     width: 330px;
 }
 .scene {
-    height: 900px;
+    /* height: 900px; */
 }
 .bg-separator {
     background-image: url('img/separator.png');

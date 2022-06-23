@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (r2l) 
                 for (let i = text.length - 1; i >= 0; i--) {
                     let c = text[i];
-                    await Promise.delay(100);
+                    await Promise.delay(70);
                     el.textContent = c + el.textContent;
                 }
-             else 
+            else 
                 for (let c of text) {
-                    await Promise.delay(100);
+                    await Promise.delay(70);
                     el.textContent = el.textContent + c;
                 }
             
@@ -47,15 +47,27 @@ document.addEventListener('DOMContentLoaded', function () {
         setInterval(() => {
             if (triger == true) {
                 (async function main() {
+                    function changer(selector, cla) {
+                        group = document.querySelectorAll(selector);
+                        for (item of group){
+                            item.classList.add(cla);
+                        }
+                    };
                     triger = false;
                     await printer("#strA", str1);
                     await printer("#strB", str2);
                     await remove("#strA", 3000, 100);
                     await printer("#strA", str3);
                     await remove("#strB", 2000, 100);
+                    document.querySelector(".animTitle").classList.add("active");
                     await printer("#strA", str4);
                     await printer("#strC", str5);
                     await printer("#strD", str6);
+                    await Promise.delay(3000);
+                    document.querySelector(".qestion").classList.add("active");
+                    changer(".titleGroup","hidden"); 
+                    document.querySelector(".animTitle").classList.add("hidden");
+                    await Promise.delay(2000);
                     await printer("#strE", str7);
                     await printer("#strF", str8);
                     await printer("#strG", str9);
@@ -85,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }, 1000);
     }
-    
+
     function slider(sliderText, sliderItem, delay) {
         let slideIndex = 1;
         let textIndex = 1;
@@ -121,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 slide.style.display = "none";
             }
             slides[slideIndex - 1].style.display = "block";
-            console.log(slideIndex, "slide");
         }
         function currentSlide(n) {
             showSlides(slideIndex = n);
@@ -131,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
             let points = document.getElementsByClassName(sliderText);
             for (let point of points) {
                 point.addEventListener('click', () => {
-                    console.log(point.id, 'text');
                     currentSlide(point.id);
                 });
             }
@@ -149,5 +159,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     slider("slider-top-text", "slider-top-item", 9700);
     slider("slider-mid-text", "slider-mid-item", 5330);
-    
+
 });
