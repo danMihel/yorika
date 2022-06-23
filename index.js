@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }, 1000);
     }
-
-    function slider() {
+    
+    function slider(sliderText, sliderItem, delay) {
         let slideIndex = 1;
         let textIndex = 1;
 
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
             activeText(textIndex += 1);
         }
         function activeText(n) {
-            let points = document.getElementsByClassName("slider-text");
+            let points = document.getElementsByClassName(sliderText);
             if (n > points.length) {
                 textIndex = 1;
             }
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             points[textIndex - 1].classList.add("active");
         }
         function showSlides(n) {
-            let slides = document.getElementsByClassName("item");
+            let slides = document.getElementsByClassName(sliderItem);
             if (n > slides.length) {
                 slideIndex = 1;
             }
@@ -121,28 +121,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 slide.style.display = "none";
             }
             slides[slideIndex - 1].style.display = "block";
+            console.log(slideIndex, "slide");
         }
         function currentSlide(n) {
             showSlides(slideIndex = n);
             activeText(textIndex = n);
         }
-        function slideClicker() {
-            let points = document.getElementsByClassName("slider-text");
+        function slideClicker(sliderText) {
+            let points = document.getElementsByClassName(sliderText);
             for (let point of points) {
                 point.addEventListener('click', () => {
-                    console.log(point.id);
+                    console.log(point.id, 'text');
                     currentSlide(point.id);
                 });
             }
         }
-        slideClicker(textIndex);
+        slideClicker(sliderText);
         showSlides(slideIndex);
         activeText(textIndex);
         setInterval(() => {
             nextText();
             nextSlide();
-        }, 5000);
+        }, delay);
     }
+
     printText();
-    slider();
+
+    slider("slider-top-text", "slider-top-item", 8000);
+    slider("slider-mid-text", "slider-mid-item", 4000);
+    
 });
