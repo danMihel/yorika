@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     printText();
 
-    slider("slider-top-text", "slider-top-item", 8000);
-    slider("slider-mid-text", "slider-mid-item", 4000);
+    slider("slider-top-text", "slider-top-item", 9700);
+    slider("slider-mid-text", "slider-mid-item", 5330);
     
 });
