@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelector(".qestion").classList.add("active");
                     changer(".titleGroup","hidden", "add"); 
                     await Promise.delay(2000);
+                    changer(".titleGroup","noDisplay", "add");
                     await printer("#strE", str7);
                     await printer("#strF", str8);
                     await printer("#strG", str9);
@@ -91,12 +92,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelector("#strH").classList.add("hidden");
                     await remove("#strH");
                     await printer("#strJ", str12);
+                    await Promise.delay(500);
                     document.querySelector("#strI").classList.add("hidden");
                     await remove("#strI");
                     await printer("#strK", str13);
                     document.querySelector("#strJ").classList.add("hidden");
                     await remove("#strJ");
                     await printer("#strL", str14);
+                    await Promise.delay(500);
                     document.querySelector("#strK").classList.add("hidden");
                     await remove("#strK");
                     await printer("#strM", str15);
@@ -107,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     await remove(".anim", 5000);
                     changer(".titleGroup","hidden", "remove"); 
                     changer(".animQestion","hidden", "remove"); 
+                    changer(".titleGroup","noDisplay", "remove");
                     document.querySelector(".animTitle").classList.remove("active");
                     document.querySelector(".qestion").classList.remove("active");
                     document.querySelector(".animTitle").classList.remove("hidden");
