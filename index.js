@@ -120,9 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
-    function slider(sliderText, sliderItem, delay) {
-        let slideIndex = 1;
-        let textIndex = 1;
+    function slider(sliderText, sliderItem, delay, n=2) {
+        let slideIndex = n;
+        let textIndex = slideIndex;
 
         function nextSlide() {
             showSlides(slideIndex += 1);
