@@ -126,8 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function nextSlide() {
             showSlides(slideIndex += 1);
-        }
-        function nextText() {
             activeText(textIndex += 1);
         }
         function activeText(n) {
@@ -168,18 +166,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         }
+        setInterval(() => {
+            nextSlide();
+        }, delay);
         slideClicker(sliderText);
         showSlides(slideIndex);
         activeText(textIndex);
-        setInterval(() => {
-            nextText();
-            nextSlide();
-        }, delay);
+        
     }
 
     printText();
 
-    slider("slider-top-text", "slider-top-item", 9700);
-    slider("slider-mid-text", "slider-mid-item", 5330);
+    slider("slider-top-text", "slider-top-item", 12700);
+    slider("slider-mid-text", "slider-mid-item", 10330);
 
 });
