@@ -31,7 +31,7 @@ body {
 
 }
 .animQestion {
-    margin-left: 15%;
+    margin: auto;
     
 }
 .bg-darck-blue {
@@ -73,7 +73,7 @@ body {
     width: 330px;
 }
 .scene {
-    /* height: 900px; */
+    min-height: 430px;
 }
 .bg-separator {
     background-image: url('img/separator.png');

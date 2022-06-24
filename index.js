@@ -40,58 +40,68 @@ document.addEventListener('DOMContentLoaded', function () {
 
         async function remove(cssSelector, delay, after) {
             await Promise.delay(delay);
-            document.querySelector(cssSelector).innerHTML = ' ';
+            items = document.querySelectorAll(cssSelector);
+                for (item of items){
+                    item.innerHTML = ' ';
+                }
             await Promise.delay(after);
         }
+
+        
         let triger = true;
         setInterval(() => {
             if (triger == true) {
                 (async function main() {
-                    function changer(selector, cla) {
+                    function changer(selector, cla, method) {
                         group = document.querySelectorAll(selector);
-                        for (item of group){
-                            item.classList.add(cla);
+                        if(method == "add"){
+                            for (item of group){
+                                item.classList.add(cla);
+                            }
+                        }if(method == "remove"){
+                            for (item of group){
+                                item.classList.remove(cla);
+                            }
                         }
+                        
                     };
                     triger = false;
                     await printer("#strA", str1);
                     await printer("#strB", str2);
-                    await remove("#strA", 3000, 100);
+                    await remove("#strA", 2000, 100);
                     await printer("#strA", str3);
                     await remove("#strB", 2000, 100);
                     document.querySelector(".animTitle").classList.add("active");
                     await printer("#strA", str4);
                     await printer("#strC", str5);
                     await printer("#strD", str6);
-                    await Promise.delay(3000);
+                    await Promise.delay(2000);
                     document.querySelector(".qestion").classList.add("active");
-                    changer(".titleGroup","hidden"); 
-                    document.querySelector(".animTitle").classList.add("hidden");
+                    changer(".titleGroup","hidden", "add"); 
                     await Promise.delay(2000);
                     await printer("#strE", str7);
                     await printer("#strF", str8);
                     await printer("#strG", str9);
+                    await remove("#strF");
                     await printer("#strH", str10);
+                    await remove("#strG");
                     await printer("#strI", str11);
+                    await remove("#strH");
                     await printer("#strJ", str12);
+                    await remove("#strI");
                     await printer("#strK", str13);
+                    await remove("#strJ");
                     await printer("#strL", str14);
+                    await remove("#strK");
                     await printer("#strM", str15);
+                    await remove("#strL");
                     await printer("#strN", str16);
-                    await remove("#strA", 5000, 1);
-                    await remove("#strB", 1, 1);
-                    await remove("#strC", 1, 1);
-                    await remove("#strD", 1, 1);
-                    await remove("#strE", 1, 1);
-                    await remove("#strF", 1, 1);
-                    await remove("#strG", 1, 1);
-                    await remove("#strH", 1, 1);
-                    await remove("#strI", 1, 1);
-                    await remove("#strJ", 1, 1);
-                    await remove("#strK", 1, 1);
-                    await remove("#strL", 1, 1);
-                    await remove("#strM", 1, 1);
-                    await remove("#strN", 1, 1);
+                    await remove("#strM");
+                    await remove(".anim", 5000);
+                    changer(".titleGroup","hidden", "remove"); 
+                    document.querySelector(".animTitle").classList.remove("active");
+                    document.querySelector(".qestion").classList.remove("active");
+                    document.querySelector(".animTitle").classList.remove("hidden");
                     triger = true;
                 })();
             }
